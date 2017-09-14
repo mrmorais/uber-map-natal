@@ -2,12 +2,13 @@
 import time
 import datetime as dt
 import pandas as pd
+import numpy as np
 
 from uber_rides.session import Session
 from uber_rides.client import UberRidesClient
 
-from uber_token import UberToken, ProductId
-from neighborhoods import Neighborhoods
+from config.uber_token import UberToken, ProductId
+from config.neighborhoods import Neighborhoods
 
 session = Session(server_token=UberToken) # Fazer autenticação do APP
 client = UberRidesClient(session) # Criar sessão
@@ -34,9 +35,10 @@ while True:
             else:
                 #dataFrame[nbhood['name']].append(estimate)
                 estimates.append(0)
-        nbhoods_data[nbhood['name']] = pd.Series(estimates)
+        avg_estimate = np.mean(estimates)
+        nbhoods_data[nbhood['name']] = pd.Series([avg_estimate], index=[time_before])
     dataFrame = pd.DataFrame(nbhoods_data)
-    dataFrame.to_csv('uber-map.csv', mode='a', header=False)
+    dataFrame.to_csv('data/uber-map.csv', mode='a', header=False)
 
     time_after = dt.datetime.now() # Datetime final
     delta = time_after - time_before # Tempo levado para fazer as requisições
