@@ -1,5 +1,5 @@
-src/config/uber_token.py
-src/data/uber-map.csv
+src/config/uber_config.py
+src/data/uber_map.csv
 
 *.pyc
 .vscode
