@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from config.neighborhoods import Neighborhoods
 
-dataFrame = pd.read_csv('data/uber-map.csv')
+dataFrame = pd.read_csv('data/uber_map.csv')
 
 for nbhood in Neighborhoods:
     estimates_sum = 0
