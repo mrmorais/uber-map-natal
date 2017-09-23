@@ -1,6 +1,10 @@
 # Ubermap Natal
 by [Maradona Morais](https://github.com/mrmorais) e Daniel Marx
 
+<center>
+<img src="https://github.com/mrmorais/uber-map-natal/blob/master/imgs/without_lbls.png?raw=true">
+</center>
+
 ### Requisitos de ambiente
 Para iniciar o `uber_map.py` é necessário ter [Python](https://www.python.org) instalado no computador e os seguintes pacotes, existentes no [Python Package Index](https://pypi.python.org):
 
