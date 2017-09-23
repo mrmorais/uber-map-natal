@@ -27,7 +27,7 @@ while True:
                 start_longitude=point['longitude'],
                 product_id=ProductId
             )
-            print response.json.get('times')
+            # print response.json.get('times')
             if (response.json.get('times')):
                 estimate = response.json.get('times')[0]['estimate']
                 #dataFrame[nbhood['name']].append(estimate)
